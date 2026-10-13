@@ -53,4 +53,4 @@ Survey data, dictionary, figures and documentation: Creative Commons Attribution
 
 ## Citation
 
-Parasram B, Choudhury A. Caribbean farmer safety survey data and reproducible analyses. 2026. Repository: https://github.com/avishekadamas-glitch/caribbean-farmer-safety-survey . Zenodo DOI will be added after a verified deposit is published.
+Parasram B, Choudhury A. Caribbean farmer safety survey data and reproducible analyses. 2026. Repository: https://github.com/avishekadamas-glitch/caribbean-farmer-safety-survey . Version 1.0.0 is archived in Zenodo: https://doi.org/10.5281/zenodo.23347518 . The archive contains the frozen package at GitHub commit `3c7ff253ce92f3bb1a3b8c61c8a84ef48ee47607`; this GitHub update adds DOI metadata without changing those archived files.
