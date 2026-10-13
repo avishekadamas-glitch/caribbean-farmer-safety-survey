@@ -1,0 +1,27 @@
+"analysis_id","p_nominal","p_holm","family_size","p_test_source","holm_below_0_05"
+"behavior|PPE|F_Risk",0.160189266989667,1,26,"Native unstandardized WLSMV path test",FALSE
+"behavior|PPE|F_Coping",0.961281208360613,1,26,"Native unstandardized WLSMV path test",FALSE
+"behavior|PPE|F_Confidence",1.80825776574522e-09,3.97816708463948e-08,26,"Native unstandardized WLSMV path test",TRUE
+"behavior|PPE|Support",0.259543592420448,1,26,"Native unstandardized WLSMV path test",FALSE
+"behavior|PPE|Oversight",0.706386040552131,1,26,"Native unstandardized WLSMV path test",FALSE
+"behavior|PPE|Training",0,0,26,"Native unstandardized WLSMV path test",TRUE
+"behavior|PPE|Barriers",2.5800826901623e-06,4.64414884229214e-05,26,"Native unstandardized WLSMV path test",TRUE
+"behavior|PPE|Benefits",0.67606499826766,1,26,"Native unstandardized WLSMV path test",FALSE
+"behavior|PPE|Norms",4.55191440096314e-14,1.04694031222152e-12,26,"Native unstandardized WLSMV path test",TRUE
+"behavior|Handling|F_Risk",0.66520633677471,1,26,"Native unstandardized WLSMV path test",FALSE
+"behavior|Handling|F_Coping",0.717647411984497,1,26,"Native unstandardized WLSMV path test",FALSE
+"behavior|Handling|F_Confidence",6.15468378195594e-06,0.000104629624293251,26,"Native unstandardized WLSMV path test",TRUE
+"behavior|Handling|Support",0.0789146941474546,0.868061635622,26,"Native unstandardized WLSMV path test",FALSE
+"behavior|Handling|Oversight",0.000294242257329991,0.00441363385994986,26,"Native unstandardized WLSMV path test",TRUE
+"behavior|Handling|Training",0.0114194762877768,0.159872668028875,26,"Native unstandardized WLSMV path test",FALSE
+"behavior|Handling|Barriers",1.13482113706098e-07,2.26964227412196e-06,26,"Native unstandardized WLSMV path test",TRUE
+"behavior|Handling|Benefits",0.871922074770817,1,26,"Native unstandardized WLSMV path test",FALSE
+"behavior|Handling|Norms",0,0,26,"Native unstandardized WLSMV path test",TRUE
+"health|Symptoms|PPE",0.0151802752988461,0.197343578884999,26,"HC3 test for the unstandardized observed association",FALSE
+"health|Symptoms|Handling",1.18195548447039e-07,2.26964227412196e-06,26,"HC3 test for the unstandardized observed association",TRUE
+"health|HeatOccurrence|HeatProtection",4.0582528884485e-08,8.52233106574185e-07,26,"HC3 test for the unstandardized observed association",TRUE
+"health|Distress|PPE",0.000195997972982696,0.00313596756772314,26,"HC3 test for the unstandardized observed association",TRUE
+"health|Distress|Handling",0.0191180786141941,0.229416943370329,26,"HC3 test for the unstandardized observed association",FALSE
+"health|Distress|Coping",0.218814806139305,1,26,"HC3 test for the unstandardized observed association",FALSE
+"health|Distress|Confidence",0.476236979862945,1,26,"HC3 test for the unstandardized observed association",FALSE
+"health|Distress|Symptoms",4.71826602151348e-22,1.13238384516324e-20,26,"HC3 test for the unstandardized observed association",TRUE

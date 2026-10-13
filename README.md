@@ -1,56 +1,45 @@
-# Caribbean farmer safety survey data and reproducible analyses
+# Caribbean farmer safety survey
 
-Authors: Barry Parasram and Avishek Choudhury, West Virginia University.
+Deidentified numerical survey data and reproducible analyses for **Institutional support and occupational safety among farmers in Trinidad and Tobago and Guyana**, by Barry Parasram and Avishek Choudhury.
 
-Cross-sectional survey of 2,000 farmers (1,000 Trinidad and Tobago, 1,000 Guyana), January–March 2026. Eligibility was active farming; the authors report that all farmers approached agreed to participate. The study received a WVU IRB exemption under protocol 2401909110. Public release of survey data was authorized by the corresponding author; interviews are excluded.
+Version **2.0.0**, 13 October 2026. Zenodo: https://doi.org/10.5281/zenodo.23349784. Repository: https://github.com/avishekadamas-glitch/caribbean-farmer-safety-survey.
 
-## Scientific status
+The cross-sectional survey recruited 2,000 active farmers, 1,000 per country, between January and March 2026. Recruitment combined geographic stratification with purposive community selection and convenience/referral recruitment; individual inclusion probabilities and community identifiers are unavailable. The sample does not support national prevalence estimates. WVU exempt protocol: **2401909110**.
 
-The original confirmatory SEM is not supported by adequate fit. Correcting independence restrictions improves fit but does not validate the model. Ordinal CFA also has inadequate corrected robust fit; grouped robust fit is unavailable. Reanalyses therefore report exploratory observed-domain associations, not causal effects, validated latent pathways, mediation or intervention superiority. This release is a reproducibility package for a manuscript being revised for PLOS ONE; it is not evidence of journal acceptance.
+## Analysis
 
-## Files
+The focused hybrid SEM represents risk beliefs (C1–C4), coping (C11–C13), and safety confidence (C14–C16) as ordinal latent factors. PPE and handling are defined observed inventories. Their equations each include the three factors, six context indices, and categorical country and A1–A11 controls. The factors are also adjusted for the context indices and controls, with correlated factor residuals and correlated practice residuals. Conditional WLSMV is used on **1,832 farmers reporting current pesticide or other agricultural-chemical use**. Corrected robust fit is available for the stand-alone psychological CFA, but unavailable for the mixed conditional SEM; the SEM fit indices are explicitly scaled.
 
-- `data/survey_numeric_original.csv`: deidentified numerical source values, including documented invalid/missing entries.
-- `data/survey_numeric_clean.csv`: same rows, with two E15 coding omissions restored and four invalid A11 values set missing.
-- `data/corrections.csv`: changes using release-only record labels.
-- `data/data_dictionary.csv`: variable wording, coding and recall periods.
-- `models/`: exact legacy SEM and transparent alternative measurement specifications.
-- `code/01_observed_associations.R`: primary and sensitivity analyses; HC3 confidence intervals; Holm adjustment across all 28 focal tests.
-- `code/02_sem_diagnostics.R`: ML/FIML legacy replication and ordinal WLSMV measurement diagnostics.
-- `results/`: executed numerical results and software information.
-- `analysis_review.ipynb`: executed companion with results, figures and a rerun option.
-- `figures/`: final scientific figure.
+Separate health models use farmers reporting current pesticide or other agricultural-chemical use for symptom recurrence (**n = 1,859**) and study-specific distress (**n = 1,851**) and all farmers for any farming-season heat dizziness (**n = 1,966**). Linear models and the pooled binary heat model use HC3 covariance. A joint Holm correction covers exactly **26 focal coefficients**, 18 SEM and 8 health; intervals are nominal. Native unstandardized SEM tests are used for multiplicity adjustment, while standardized coefficients use delta-method confidence intervals.
 
-Original survey IDs and geographic labels have been removed and row order shuffled. No names, emails, phone numbers, initials, signatures, interviews, paper scans or identifying lookup table are included. Country and coarse coded demographic/farm categories are retained for reproducibility. Users must not attempt reidentification.
+The individual-barrier sensitivity changes only the C5–C8 mean to four numerical items, retaining the same SEM cohort and all other choices. Additional outputs document internal partitions, estimator assumptions, country measurement equality, cohort/profile checks, symptom occurrence and the qualified ordinal heat model. Ordinal heat proportional-odds equality is rejected. Exact country measurement equality is unsupported; no formal latent country mean/path comparison or ordinary-MLE country heat inference is claimed. Specifications are exploratory and data-informed; the internal validation partition is not independent external confirmation. All associations remain cross-sectional and do not establish mediation, clinical diagnosis or intervention effectiveness.
+
+## Contents
+
+- `data/`: deidentified numerical source/cleaned records, dictionary, six-cell correction log, fixed folds and SEM cohort labels.
+- `models/`: explicit selected SEM, individual-barrier and measurement syntax.
+- `code/`: selected-model, health, joint multiplicity, descriptive/data-check and figure scripts.
+- `results/behavior/`: complete SEM/measurement parameters, standardized delta-method intervals, fit indices, warnings and population/adjustment mappings.
+- `results/health/`: every health/control coefficient, diagnostics and specified sensitivities.
+- `results/primary_family/`: the joint 26 family, exact nominal p values and Holm mapping.
+- `figures/`: Figs 1–3, source tables, captions and plotting metadata.
+
+The numerical source file preserves coding exceptions; all models use the reconciled cleaned file. Two valid E15 category3 responses are restored and four invalid A11 category2 responses are treated as missing. No other numerical responses are changed. Matching profiles are retained in primary analyses and assessed for influence, since matching answers do not establish duplicated respondents.
 
 ## Reproduce
 
-Run from this repository directory, with R installed:
+Use R 4.2.3 with lavaan 0.7-3, semTools 0.5-10, sandwich 3.1-3, MASS 7.3-58.2 and jsonlite 2.0.0 (executed session details are saved). Install the required R packages in your own library, and run from this release root:
 
 ```sh
-Rscript code/install_dependencies.R
-Rscript code/00_validate_cleaning.R
-Rscript code/01_observed_associations.R
-Rscript code/02_sem_diagnostics.R
-Rscript code/03_descriptive_tables.R
+Rscript code/reproduce_all.R
 ```
 
-To reproduce the figure, install Python pandas, matplotlib and Pillow, then run `python code/04_figure.py`.
+Alternatively run the numbered scripts individually. Optional inputs/output directories are documented at the top of each script. Outputs are overwritten reproducibly. The fixed partition is supplied in `data/model_folds.csv`; its seed is 20261013 and exact numerical profiles remain in the same fold. No raw location/community labels are released.
 
-Reference environment: R 4.2.3, lavaan 0.7-3, sandwich 3.1-3. Numerical optimization may differ slightly by platform/version. The notebook uses Python for presentation and invokes the R scripts; its saved outputs can be read without executing.
+Python figure reproduction uses matplotlib, numpy, pandas and Pillow. From this root, run the figure scripts listed in `figures/plotting_instructions.txt`; they read saved numerical results and write the PNG and TIFF figure files. Figures use separate linear-coefficient and odds-ratio axes.
 
-## Interpretation and limitations
+## Sharing and interpretation
 
-Recruitment had purposive and convenience elements; unknown individual inclusion probabilities and missing community identifiers preclude population weighting or verified design-correct standard errors. Main models use complete constituent-item scores and modelwise complete cases; pesticide behavior/symptom/distress models primarily include current pesticide users. Country is adjusted categorically. Scores are equally weighted observed summaries and do not establish a latent trait or clinical diagnosis. Distress recall is one week; recent pesticide symptoms three months; heat items have nonuniform wording/windows. Identical profiles are retained in primary analyses because distinct survey IDs are not evidence of duplicate interviews; exclusion of excess profiles is sensitivity only. Some nonusers answered pesticide questions without a not-applicable option. Model intervals are nominal 95% HC3, not adjusted for clustering; focal p values use Holm adjustment.
+Source participant identifiers, detailed locations, consent initials/signatures, contacts, scans, interview transcripts and identity lookup tables are excluded. Release `record_id` values are arbitrary row labels linking the numerical files, not participant identifiers. Only the deidentified survey is public. Self-reported symptoms are not clinical diagnoses; no unrecorded sampling clusters or causal interpretation are supplied by the code.
 
-### Legacy reproduction
-
-The original AMOS model has 160 estimated parameters and 920 degrees of freedom. Normal-likelihood lavaan chi-square differs from supplied AMOS by the N vs N−1 convention; scaling by 1999/2000 reproduces AMOS chi-square 12336.354. Baseline degrees of freedom differ (lavaan 990, AMOS 1035), so TLI is not identical. This is an independent reproduction, not a new AMOS run.
-
-## License
-
-Survey data, dictionary, figures and documentation: Creative Commons Attribution 4.0 (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/ . Analysis code: MIT (see LICENSE_CODE).
-
-## Citation
-
-Parasram B, Choudhury A. Caribbean farmer safety survey data and reproducible analyses. 2026. Repository: https://github.com/avishekadamas-glitch/caribbean-farmer-safety-survey . Version 1.0.0 is archived in Zenodo: https://doi.org/10.5281/zenodo.23347518 . The archive contains the frozen package at GitHub commit `3c7ff253ce92f3bb1a3b8c61c8a84ef48ee47607`; this GitHub update adds DOI metadata without changing those archived files.
+Data, dictionary, documentation and figures are licensed under **CC BY 4.0**; analysis and figure code under **MIT**. Cite the authors and the version-specific Zenodo DOI. A SHA256 manifest permits file-integrity checks.

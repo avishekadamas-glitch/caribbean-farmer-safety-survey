@@ -1,0 +1,9 @@
+analysis_id,outcome,predictor,n,plotted_estimate,plotted_lower,plotted_upper,scale,p_holm,family_size,filled_marker
+health|Symptoms|PPE,Symptoms,PPE,1859,-0.0299774293923605,-0.0541689341977895,-0.0057859245869314,unstandardized score coefficient,0.197343578884999,26,False
+health|Symptoms|Handling,Symptoms,Handling,1859,-0.094326350193149,-0.129117689289261,-0.0595350110970375,unstandardized score coefficient,2.26964227412196e-06,26,True
+health|HeatOccurrence|HeatProtection,HeatOccurrence,HeatProtection,1966,0.648281572502097,0.555317426870332,0.756808587143305,"odds ratio, logarithmic axis",8.52233106574185e-07,26,True
+health|Distress|PPE,Distress,PPE,1851,-0.0909160394370446,-0.138698131239605,-0.0431339476344843,unstandardized score coefficient,0.0031359675677231,26,True
+health|Distress|Handling,Distress,Handling,1851,-0.0853496045812811,-0.156723241295583,-0.013975967866979,unstandardized score coefficient,0.229416943370329,26,False
+health|Distress|Coping,Distress,Coping,1851,-0.0401324018089229,-0.10411890209634,0.0238540984784943,unstandardized score coefficient,1.0,26,False
+health|Distress|Confidence,Distress,Confidence,1851,-0.0250222132679907,-0.0938983483268758,0.0438539217908944,unstandardized score coefficient,1.0,26,False
+health|Distress|Symptoms,Distress,Symptoms,1851,0.484241936082468,0.38713965831799,0.581344213846946,unstandardized score coefficient,1.13238384516324e-20,26,True

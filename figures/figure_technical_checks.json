@@ -1,0 +1,30 @@
+[
+  {
+    "file": "Fig1.tiff",
+    "pixels": [
+      3000,
+      3440
+    ],
+    "dpi": [
+      400.0,
+      400.0
+    ],
+    "mode": "RGB",
+    "frames": 1,
+    "bytes": 877054
+  },
+  {
+    "file": "Fig3.tiff",
+    "pixels": [
+      3000,
+      3400
+    ],
+    "dpi": [
+      400.0,
+      400.0
+    ],
+    "mode": "RGB",
+    "frames": 1,
+    "bytes": 635052
+  }
+]

@@ -1,0 +1,166 @@
+lavaan 0.7-3 ended normally after 31 iterations
+
+  Estimator                                       DWLS
+  Optimization method                           NLMINB
+  Number of model parameters                        53
+
+                                                  Used       Total
+  Number of observations                           999        1000
+  Number of missing patterns                         8            
+
+Model Test User Model:
+                                              Standard      Scaled
+  Test Statistic                                72.854     138.542
+  Degrees of freedom                                32          32
+  P-value (Unknown)                                 NA       0.000
+  Scaling correction factor                                  0.563
+  Shift parameter                                            9.097
+    simple second-order correction                                
+
+Model Test Baseline Model:
+
+  Test statistic                             53236.700   24298.076
+  Degrees of freedom                                45          45
+  P-value                                           NA       0.000
+  Scaling correction factor                                  2.193
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    0.999       0.996
+  Tucker-Lewis Index (TLI)                       0.999       0.994
+                                                                  
+  Robust Comparative Fit Index (CFI)                         0.981
+  Robust Tucker-Lewis Index (TLI)                            0.973
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.036       0.058
+  90 Percent confidence interval - lower         0.025       0.048
+  90 Percent confidence interval - upper         0.047       0.068
+  P-value H_0: RMSEA <= 0.050                    0.985       0.092
+  P-value H_0: RMSEA >= 0.080                    0.000       0.000
+                                                                  
+  Robust RMSEA                                               0.070
+  90 Percent confidence interval - lower                     0.056
+  90 Percent confidence interval - upper                     0.083
+  P-value H_0: Robust RMSEA <= 0.050                         0.008
+  P-value H_0: Robust RMSEA >= 0.080                         0.108
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.031       0.031
+
+Goodness of Fit Index:
+
+  Goodness of Fit Index (GFI)                    0.992            
+  90 Percent confidence interval - lower         0.986            
+  90 Percent confidence interval - upper         0.996            
+                                                                  
+  Robust GFI                                                 0.970
+  90 Percent confidence interval - lower                     0.958
+  90 Percent confidence interval - upper                     0.980
+
+Parameter Estimates:
+
+  Parameterization                               Delta
+  Standard errors                           Robust.sem
+  Information                                 Expected
+  Information bread                           Observed
+  Information saturated (h1) model        Unstructured
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  Risk =~                                                               
+    C1                1.000                               0.754    0.754
+    C2                1.186    0.025   47.768    0.000    0.894    0.894
+    C3                1.233    0.026   46.876    0.000    0.929    0.929
+    C4                1.172    0.026   44.418    0.000    0.883    0.883
+  Coping =~                                                             
+    C11               1.000                               0.736    0.736
+    C12               1.327    0.028   47.974    0.000    0.977    0.977
+    C13               1.265    0.023   55.795    0.000    0.931    0.931
+  Confidence =~                                                         
+    C14               1.000                               0.790    0.790
+    C15               1.052    0.024   44.411    0.000    0.831    0.831
+    C16               1.141    0.027   42.814    0.000    0.902    0.902
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  Risk ~~                                                               
+    Coping            0.136    0.020    6.983    0.000    0.246    0.246
+    Confidence        0.396    0.019   21.350    0.000    0.666    0.666
+  Coping ~~                                                             
+    Confidence        0.260    0.018   14.394    0.000    0.448    0.448
+
+Thresholds:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+    C1|t1            -2.326    0.118  -19.665    0.000   -2.326   -2.326
+    C1|t2            -1.895    0.080  -23.579    0.000   -1.895   -1.895
+    C1|t3            -1.358    0.056  -24.087    0.000   -1.358   -1.358
+    C1|t4             0.269    0.040    6.693    0.000    0.269    0.269
+    C2|t1            -2.457    0.136  -18.130    0.000   -2.457   -2.457
+    C2|t2            -1.926    0.082  -23.388    0.000   -1.926   -1.926
+    C2|t3            -1.425    0.058  -24.370    0.000   -1.425   -1.425
+    C2|t4             0.368    0.041    9.046    0.000    0.368    0.368
+    C3|t1            -2.747    0.189  -14.508    0.000   -2.747   -2.747
+    C3|t2            -1.995    0.087  -22.886    0.000   -1.995   -1.995
+    C3|t3            -1.490    0.061  -24.526    0.000   -1.490   -1.490
+    C3|t4             0.309    0.040    7.637    0.000    0.309    0.309
+    C4|t1            -2.196    0.104  -21.048    0.000   -2.196   -2.196
+    C4|t2            -1.536    0.063  -24.564    0.000   -1.536   -1.536
+    C4|t3            -1.203    0.052  -23.038    0.000   -1.203   -1.203
+    C4|t4             0.344    0.041    8.462    0.000    0.344    0.344
+    C11|t1           -2.457    0.136  -18.126    0.000   -2.457   -2.457
+    C11|t2           -1.750    0.072  -24.288    0.000   -1.750   -1.750
+    C11|t3           -0.914    0.046  -19.701    0.000   -0.914   -0.914
+    C11|t4            1.001    0.048   20.909    0.000    1.001    1.001
+    C12|t1           -2.225    0.107  -20.748    0.000   -2.225   -2.225
+    C12|t2           -1.683    0.069  -24.457    0.000   -1.683   -1.683
+    C12|t3           -0.924    0.047  -19.829    0.000   -0.924   -0.924
+    C12|t4            0.944    0.047   20.108    0.000    0.944    0.944
+    C13|t1           -2.256    0.110  -20.432    0.000   -2.256   -2.256
+    C13|t2           -1.505    0.061  -24.552    0.000   -1.505   -1.505
+    C13|t3           -0.858    0.046  -18.847    0.000   -0.858   -0.858
+    C13|t4            0.910    0.046   19.644    0.000    0.910    0.910
+    C14|t1           -2.326    0.118  -19.665    0.000   -2.326   -2.326
+    C14|t2           -1.727    0.071  -24.364    0.000   -1.727   -1.727
+    C14|t3           -1.154    0.051  -22.621    0.000   -1.154   -1.154
+    C14|t4            0.714    0.044   16.369    0.000    0.714    0.714
+    C15|t1           -1.798    0.075  -24.093    0.000   -1.798   -1.798
+    C15|t2           -1.424    0.058  -24.356    0.000   -1.424   -1.424
+    C15|t3           -0.949    0.047  -20.202    0.000   -0.949   -0.949
+    C15|t4            0.791    0.045   17.739    0.000    0.791    0.791
+    C16|t1           -2.053    0.092  -22.404    0.000   -2.053   -2.053
+    C16|t2           -1.497    0.061  -24.526    0.000   -1.497   -1.497
+    C16|t3           -0.960    0.047  -20.348    0.000   -0.960   -0.960
+    C16|t4            0.767    0.044   17.303    0.000    0.767    0.767
+
+Variances:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .C1                0.432                               0.432    0.432
+   .C2                0.201                               0.201    0.201
+   .C3                0.136                               0.136    0.136
+   .C4                0.220                               0.220    0.220
+   .C11               0.458                               0.458    0.458
+   .C12               0.046                               0.046    0.046
+   .C13               0.134                               0.134    0.134
+   .C14               0.376                               0.376    0.376
+   .C15               0.309                               0.309    0.309
+   .C16               0.187                               0.187    0.187
+    Risk              0.568    0.024   23.713    0.000    1.000    1.000
+    Coping            0.542    0.021   25.998    0.000    1.000    1.000
+    Confidence        0.624    0.023   26.899    0.000    1.000    1.000
+
+R-Square:
+                   Estimate
+    C1                0.568
+    C2                0.799
+    C3                0.864
+    C4                0.780
+    C11               0.542
+    C12               0.954
+    C13               0.866
+    C14               0.624
+    C15               0.691
+    C16               0.813
+

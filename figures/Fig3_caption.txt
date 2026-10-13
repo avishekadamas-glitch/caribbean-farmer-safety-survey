@@ -1,0 +1,3 @@
+Fig 3. Sensitivity to representing safety barriers as individual items.
+
+Panel A compares fully standardized estimates and nominal 95% delta-method intervals for the 16 matched non-barrier practice paths. The main SEM uses the mean of C5–C8; the sensitivity SEM enters C5, C6, C7 and C8 separately. Panel B shows the eight individual-item paths: equipment cost, hot-weather discomfort, time burden and supply access for PPE and handling. Both models use identical records, controls, other indices, latent indicators and WLSMV settings. Item and mean-score paths have different predictor definitions; their magnitudes are not direct substitutes. Sensitivity intervals and tests are nominal and outside the primary Holm family. All paths are adjusted associations.

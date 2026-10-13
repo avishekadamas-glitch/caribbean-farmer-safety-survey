@@ -1,0 +1,100 @@
+## LOADINGS:
+
+Risk =~ c(NA, NA)*C1 + c(lambda.1_1.g1, lambda.1_1.g2)*C1
+Risk =~ c(NA, NA)*C2 + c(lambda.2_1.g1, lambda.2_1.g2)*C2
+Risk =~ c(NA, NA)*C3 + c(lambda.3_1.g1, lambda.3_1.g2)*C3
+Risk =~ c(NA, NA)*C4 + c(lambda.4_1.g1, lambda.4_1.g2)*C4
+Coping =~ c(NA, NA)*C11 + c(lambda.5_2.g1, lambda.5_2.g2)*C11
+Coping =~ c(NA, NA)*C12 + c(lambda.6_2.g1, lambda.6_2.g2)*C12
+Coping =~ c(NA, NA)*C13 + c(lambda.7_2.g1, lambda.7_2.g2)*C13
+Confidence =~ c(NA, NA)*C14 + c(lambda.8_3.g1, lambda.8_3.g2)*C14
+Confidence =~ c(NA, NA)*C15 + c(lambda.9_3.g1, lambda.9_3.g2)*C15
+Confidence =~ c(NA, NA)*C16 + c(lambda.10_3.g1, lambda.10_3.g2)*C16
+
+## THRESHOLDS:
+
+C1 | c(NA, NA)*t1 + c(C1.thr1.g1, C1.thr1.g2)*t1
+C1 | c(NA, NA)*t2 + c(C1.thr2.g1, C1.thr2.g2)*t2
+C1 | c(NA, NA)*t3 + c(C1.thr3.g1, C1.thr3.g2)*t3
+C1 | c(NA, NA)*t4 + c(C1.thr4.g1, C1.thr4.g2)*t4
+C2 | c(NA, NA)*t1 + c(C2.thr1.g1, C2.thr1.g2)*t1
+C2 | c(NA, NA)*t2 + c(C2.thr2.g1, C2.thr2.g2)*t2
+C2 | c(NA, NA)*t3 + c(C2.thr3.g1, C2.thr3.g2)*t3
+C2 | c(NA, NA)*t4 + c(C2.thr4.g1, C2.thr4.g2)*t4
+C3 | c(NA, NA)*t1 + c(C3.thr1.g1, C3.thr1.g2)*t1
+C3 | c(NA, NA)*t2 + c(C3.thr2.g1, C3.thr2.g2)*t2
+C3 | c(NA, NA)*t3 + c(C3.thr3.g1, C3.thr3.g2)*t3
+C3 | c(NA, NA)*t4 + c(C3.thr4.g1, C3.thr4.g2)*t4
+C4 | c(NA, NA)*t1 + c(C4.thr1.g1, C4.thr1.g2)*t1
+C4 | c(NA, NA)*t2 + c(C4.thr2.g1, C4.thr2.g2)*t2
+C4 | c(NA, NA)*t3 + c(C4.thr3.g1, C4.thr3.g2)*t3
+C4 | c(NA, NA)*t4 + c(C4.thr4.g1, C4.thr4.g2)*t4
+C11 | c(NA, NA)*t1 + c(C11.thr1.g1, C11.thr1.g2)*t1
+C11 | c(NA, NA)*t2 + c(C11.thr2.g1, C11.thr2.g2)*t2
+C11 | c(NA, NA)*t3 + c(C11.thr3.g1, C11.thr3.g2)*t3
+C11 | c(NA, NA)*t4 + c(C11.thr4.g1, C11.thr4.g2)*t4
+C12 | c(NA, NA)*t1 + c(C12.thr1.g1, C12.thr1.g2)*t1
+C12 | c(NA, NA)*t2 + c(C12.thr2.g1, C12.thr2.g2)*t2
+C12 | c(NA, NA)*t3 + c(C12.thr3.g1, C12.thr3.g2)*t3
+C12 | c(NA, NA)*t4 + c(C12.thr4.g1, C12.thr4.g2)*t4
+C13 | c(NA, NA)*t1 + c(C13.thr1.g1, C13.thr1.g2)*t1
+C13 | c(NA, NA)*t2 + c(C13.thr2.g1, C13.thr2.g2)*t2
+C13 | c(NA, NA)*t3 + c(C13.thr3.g1, C13.thr3.g2)*t3
+C13 | c(NA, NA)*t4 + c(C13.thr4.g1, C13.thr4.g2)*t4
+C14 | c(NA, NA)*t1 + c(C14.thr1.g1, C14.thr1.g2)*t1
+C14 | c(NA, NA)*t2 + c(C14.thr2.g1, C14.thr2.g2)*t2
+C14 | c(NA, NA)*t3 + c(C14.thr3.g1, C14.thr3.g2)*t3
+C14 | c(NA, NA)*t4 + c(C14.thr4.g1, C14.thr4.g2)*t4
+C15 | c(NA, NA)*t1 + c(C15.thr1.g1, C15.thr1.g2)*t1
+C15 | c(NA, NA)*t2 + c(C15.thr2.g1, C15.thr2.g2)*t2
+C15 | c(NA, NA)*t3 + c(C15.thr3.g1, C15.thr3.g2)*t3
+C15 | c(NA, NA)*t4 + c(C15.thr4.g1, C15.thr4.g2)*t4
+C16 | c(NA, NA)*t1 + c(C16.thr1.g1, C16.thr1.g2)*t1
+C16 | c(NA, NA)*t2 + c(C16.thr2.g1, C16.thr2.g2)*t2
+C16 | c(NA, NA)*t3 + c(C16.thr3.g1, C16.thr3.g2)*t3
+C16 | c(NA, NA)*t4 + c(C16.thr4.g1, C16.thr4.g2)*t4
+
+## INTERCEPTS:
+
+C1 ~ c(0, 0)*1 + c(nu.1.g1, nu.1.g2)*1
+C2 ~ c(0, 0)*1 + c(nu.2.g1, nu.2.g2)*1
+C3 ~ c(0, 0)*1 + c(nu.3.g1, nu.3.g2)*1
+C4 ~ c(0, 0)*1 + c(nu.4.g1, nu.4.g2)*1
+C11 ~ c(0, 0)*1 + c(nu.5.g1, nu.5.g2)*1
+C12 ~ c(0, 0)*1 + c(nu.6.g1, nu.6.g2)*1
+C13 ~ c(0, 0)*1 + c(nu.7.g1, nu.7.g2)*1
+C14 ~ c(0, 0)*1 + c(nu.8.g1, nu.8.g2)*1
+C15 ~ c(0, 0)*1 + c(nu.9.g1, nu.9.g2)*1
+C16 ~ c(0, 0)*1 + c(nu.10.g1, nu.10.g2)*1
+
+## UNIQUE-FACTOR VARIANCES:
+
+C1 ~~ c(1, 1)*C1 + c(theta.1_1.g1, theta.1_1.g2)*C1
+C2 ~~ c(1, 1)*C2 + c(theta.2_2.g1, theta.2_2.g2)*C2
+C3 ~~ c(1, 1)*C3 + c(theta.3_3.g1, theta.3_3.g2)*C3
+C4 ~~ c(1, 1)*C4 + c(theta.4_4.g1, theta.4_4.g2)*C4
+C11 ~~ c(1, 1)*C11 + c(theta.5_5.g1, theta.5_5.g2)*C11
+C12 ~~ c(1, 1)*C12 + c(theta.6_6.g1, theta.6_6.g2)*C12
+C13 ~~ c(1, 1)*C13 + c(theta.7_7.g1, theta.7_7.g2)*C13
+C14 ~~ c(1, 1)*C14 + c(theta.8_8.g1, theta.8_8.g2)*C14
+C15 ~~ c(1, 1)*C15 + c(theta.9_9.g1, theta.9_9.g2)*C15
+C16 ~~ c(1, 1)*C16 + c(theta.10_10.g1, theta.10_10.g2)*C16
+
+## LATENT MEANS/INTERCEPTS:
+
+Risk ~ c(0, 0)*1 + c(alpha.1.g1, alpha.1.g2)*1
+Coping ~ c(0, 0)*1 + c(alpha.2.g1, alpha.2.g2)*1
+Confidence ~ c(0, 0)*1 + c(alpha.3.g1, alpha.3.g2)*1
+
+## COMMON-FACTOR VARIANCES:
+
+Risk ~~ c(1, 1)*Risk + c(psi.1_1.g1, psi.1_1.g2)*Risk
+Coping ~~ c(1, 1)*Coping + c(psi.2_2.g1, psi.2_2.g2)*Coping
+Confidence ~~ c(1, 1)*Confidence + c(psi.3_3.g1, psi.3_3.g2)*Confidence
+
+## COMMON-FACTOR COVARIANCES:
+
+Risk ~~ c(NA, NA)*Coping + c(psi.2_1.g1, psi.2_1.g2)*Coping
+Risk ~~ c(NA, NA)*Confidence + c(psi.3_1.g1, psi.3_1.g2)*Confidence
+Coping ~~ c(NA, NA)*Confidence + c(psi.3_2.g1, psi.3_2.g2)*Confidence
+

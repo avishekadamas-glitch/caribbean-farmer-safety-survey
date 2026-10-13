@@ -1,0 +1,30 @@
+[
+  {
+    "file": "Fig2.png",
+    "pixels": [
+      3000,
+      3040
+    ],
+    "mode": "RGBA",
+    "dpi": [
+      399.9992,
+      399.9992
+    ],
+    "compression": null,
+    "bytes": 311007
+  },
+  {
+    "file": "Fig2.tiff",
+    "pixels": [
+      3000,
+      3040
+    ],
+    "mode": "RGB",
+    "dpi": [
+      400.0,
+      400.0
+    ],
+    "compression": "tiff_lzw",
+    "bytes": 498098
+  }
+]

@@ -1,0 +1,4 @@
+From the release root, after the R pipeline completes:
+python3 code/make_scientific_figures.py
+python3 code/04_health_figure.py
+Requires matplotlib, numpy, pandas and Pillow. Scripts use relative paths and write all final figures, source data and technical checks to figures/.

@@ -1,0 +1,13 @@
+{
+  "primary_family_health_n": 8,
+  "primary_family_combined_n": 26,
+  "primary_family": "18 behavioral SEM paths plus 8 health coefficients; joint Holm correction applied by the combined-family script",
+  "case_selection": "Modelwise complete cases. Symptoms and distress restrict A10 to 1 or 2; heat uses all farmers. All covariates categorical. Constant controls omitted only in descriptive subgroup fits.",
+  "joint_sensitivity": "All fourteen observed summaries, E10 and Country/A1-A11 complete; current-user restriction retained for pesticide outcomes.",
+  "matching_profile_sensitivity": "One numerical profile representative retained for influence assessment; matching answers do not establish duplicated participants.",
+  "primary_heat": "Binary E10>0, any dizziness/faintness in past farming season. Ordinal PO sensitivity retains all three response categories and is qualified by correlated-score threshold diagnostics.",
+  "symptom_coding": "E1-E4: 0 no, 1 yes, 2 yes more than once; past three months after handling. Mean is a defined category-recurrence summary, not event count, dose or poisoning diagnosis. E5 ever medically attended poisoning is separate.",
+  "distress_coding": "E13-E15 past week, each 0-3. Mean is study-specific distress summary, not DASS diagnosis or clinical severity threshold.",
+  "inference": "All analyses exploratory; nominal robust intervals. Holm controls the designated combined focal family, not model-selection uncertainty or diagnostic/sensitivity tests.",
+  "country_heat": "No ordinary-MLE country-specific heat inference is reported; sparse nuisance categories can generate boundary estimates."
+}

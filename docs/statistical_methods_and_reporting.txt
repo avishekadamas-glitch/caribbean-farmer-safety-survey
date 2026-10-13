@@ -1,0 +1,227 @@
+Statistical methods and reporting supplement
+
+This supplement specifies the psychological measurement model, focused hybrid SEM, separate health regressions and exploratory sensitivity analyses for the cross-sectional farmer survey. The models distinguish ordinal psychological factors from defined observed inventories. Data, complete syntax, numerical output and portable scripts are in S3 File; figure inputs and plotting scripts are in S4 File. The survey release is version 2.0.0, DOI 10.5281/zenodo.23349784.
+
+Analysis populations and internal partition
+
+The survey comprises 2,000 active farmers, 1,000 from each country, interviewed from January to March 2026. Recruitment includes geographic stratification, purposive community selection and convenience or referral recruitment. All approached farmers agreed to participate. Known respondent inclusion probabilities, population weights and actual sampled-community identifiers are unavailable. Descriptive percentages are unweighted recruited-sample summaries; the analyses do not estimate national prevalence or adjust for unavailable community clustering.
+
+A10 asks about current pesticide or other agricultural-chemical use. Current chemical users are defined exactly as A10 = 1 or 2, representing occasional or regular use (n = 1,897). A10 does not identify use throughout the three-month symptom window. The primary behavioral model requires complete responses only for its included indicators, observed-score items, country and A1–A11 controls, yielding 1,832 records. C18 is not used in this model. Health analyses use their own modelwise complete cases without imputation: symptoms n = 1,859, heat occurrence n = 1,966 and distress n = 1,851.
+
+Five fixed folds contain 400 records each, with 200 from each country, and retain matching full numerical response profiles in the same fold. Folds 1–3 form the development partition and folds 4–5 the validation partition. Complete H1 records number 1,101 and 731, respectively. The partition is internal to the same survey and was formed after data collection. Model specifications were informed by questionnaire content and examination of these data; this is exploratory internal assessment, not preregistered confirmation or independent external validation.
+
+Item representations and score definitions
+
+Observed summaries are equally weighted arithmetic means, requiring every constituent answer and using no prorating. Higher PPE, handling and heat-protection values indicate more frequent safety practices. Training responses are coded 0 = none, 1 = more than one year ago and 2 = within the past year; agreement and practice items retain their five response categories. Numerical summary scores impose the specified category spacing and are not assumed to be validated latent scales.
+
+Table S2.1. Item representations used in the analyses
+
+Domain | Items | Representation
+
+Risk beliefs | C1–C4 | Ordinal common factor in SEM
+
+Coping | C11–C13 | Ordinal factor in SEM; observed mean in distress model
+
+Safety confidence | C14–C16 | Ordinal factor in SEM; observed mean in distress model
+
+Institutional support | B4, B5 | Observed mean
+
+Regulatory oversight | B6, B7 | Observed mean
+
+Training recency | B1–B3 | Observed mean, range 0–2
+
+Barriers | C5–C8 | Observed mean; individual coded items in sensitivity
+
+Perceived benefits | C9, C10 | Observed mean
+
+Descriptive norms | C17, C19 | Observed mean; C18 excluded
+
+PPE use | D1–D4 | Observed outcome mean
+
+Chemical handling | D5–D8 | Observed outcome mean
+
+Heat protection | D10, D12, D13 | Observed mean of rest breaks, water and shade
+
+Recent pesticide symptoms | E1–E4 | Observed mean, range 0–2
+
+Farm-related distress | E13–E15 | Observed mean, range 0–3
+
+E1–E4 concern symptoms after handling or applying pesticides in the past three months. Their categories are no (0), yes (1) and yes more than once (2). The mean summarizes response-category recurrence rather than event counts, absorbed dose or diagnosed poisoning. Lifetime medically attended poisoning (E5) is separate. E10 asks about dizziness or faintness during the past farming season; the primary endpoint is any positive answer (E10 > 0). E11 has no stated recall interval and E12 concerns an event ever interrupting work or requiring care, so they do not enter this past-season endpoint. E13–E15 are three farm-context adaptations with a past-week recall and are not the full DASS instrument or a basis for clinical thresholds. D9 and D11 concern ergonomic practice and task rotation and are outside the pesticide and heat scores.
+
+Psychological measurement and country equality
+
+The focused measurement model M1 is a correlated three-factor CFA: Risk =~ C1 + C2 + C3 + C4; Coping =~ C11 + C12 + C13; Confidence =~ C14 + C15 + C16. It uses WLSMV with ordered responses, first-item loading identification and pairwise available observations. No cross-loadings or correlated item residuals are specified. All 2,000 records are eligible, but two with all ten indicators missing are omitted, yielding n = 1,998. The development and validation measurement samples are 1,198 and 800. One empty record in each country is omitted from the within-country fits (n = 999 each).
+
+Scaled statistics and corrected robust indices are distinct outputs. Table S2.2 reports the scaled chi-square and corrected robust CFI, TLI and RMSEA for M1; SRMR is reported separately. The pooled scaled CFI, TLI and RMSEA are 0.996, 0.994 and 0.050. Approximate fit supports evaluation of this ten-item structure but does not validate the full questionnaire. Higher country and validation RMSEA values require qualification. Country 1 denotes Trinidad and Tobago and country 2 denotes Guyana.
+
+Table S2.2. Focused ordinal measurement fit
+
+Sample | n | Scaled χ² (df) | Robust CFI / TLI | Robust RMSEA (90% CI) | SRMR
+
+pooled | 1998 | 191.495 (32) | 0.984 / 0.978 | 0.059 (0.050–0.067) | 0.025
+
+development | 1198 | 127.571 (32) | 0.986 / 0.981 | 0.056 (0.045–0.067) | 0.027
+
+validation | 800 | 109.004 (32) | 0.978 / 0.969 | 0.069 (0.055–0.083) | 0.030
+
+country 1 | 999 | 194.439 (32) | 0.966 / 0.953 | 0.082 (0.071–0.094) | 0.037
+
+country 2 | 999 | 138.542 (32) | 0.981 / 0.973 | 0.070 (0.056–0.083) | 0.031
+
+Country measurement-equality diagnostics use theta parameterization, unit latent-variance identification and Wu–Estabrook categorical identification generated with semTools. Configural, equal-threshold and equal-threshold-plus-loading specifications use pairwise responses in the same two-country sample. Scaled WLSMV difference tests reject equal thresholds (Δχ² = 83.888, Δdf = 20, p < 0.001) and added equal loadings (Δχ² = 46.281, Δdf = 7, p < 0.001). Corrected robust indices are unavailable for the constrained models. These results preclude assuming equal measurement, comparing latent country means, or claiming equivalent country pathways.
+
+Table S2.3. Country measurement-equality diagnostics
+
+Specification | Scaled χ² (df) | Scaled CFI / TLI | Scaled RMSEA (90% CI) | SRMR
+
+configural | 333.170 (64) | 0.993 / 0.990 | 0.065 (0.058–0.072) | 0.034
+
+thresholds | 404.836 (84) | 0.991 / 0.991 | 0.062 (0.056–0.068) | 0.034
+
+thresholds loadings | 442.688 (91) | 0.991 / 0.991 | 0.062 (0.056–0.068) | 0.035
+
+The configural model has corrected robust CFI 0.974, TLI 0.964 and RMSEA 0.076 (90% CI 0.068–0.085). Favorable scaled indices in the constrained models do not negate the equality-test rejection. Country-specific coefficients are descriptive checks within recruited samples, not formal tests of national or latent-country differences.
+
+Focused hybrid behavioral SEM
+
+The H1 specification combines the same three ordinal factors with six observed predictors X = {Support, Oversight, Training, Barriers, Benefits, Norms} and categorical controls Z. Every psychological factor is regressed on X and Z. Both PPE and Handling are regressed on all three factors, X and Z, producing 18 focal behavioral paths. The three psychological-factor residual covariances are freely estimated; the PPE and Handling residuals also covary. No other residual covariance, indirect-effect or mediation interpretation is specified. Full syntax and complete adjustment paths are supplied in S3 File.
+
+Z contains 28 treatment-coded indicator variables from country and all A1–A11 categories, using the lowest observed category as each reference: Country2; A12, A13, A14; A22, A23; A32, A33, A34, A35; A42, A43, A44; A52, A53; A62, A63; A72, A73, A74; A82, A83, A84; A92, A93, A94; A102; and A111. The release maps these to Z1–Z28. Category codes are not entered as numerical demographic slopes. Within-country fits remove the constant country indicator and retain varying categorical controls, including A10.
+
+H1 uses WLSMV conditional on observed predictors, with fixed.x = TRUE, conditional.x = TRUE and complete model information. The ten psychological indicators are ordered categorical; defined indices are continuous observed variables. First-item loadings identify each factor. Pooled, development and validation fits converge and pass the lavaan admissibility check without warnings. The pooled specification has 234 estimated parameters and n = 1,832. Scaled fit is summarized in Table S2.4. Corrected robust CFI, TLI and RMSEA are unavailable for this fitted mixed ordinal–continuous conditional model, and their absence must not be read as zero or as equivalent to the scaled indices.
+
+Table S2.4. Hybrid SEM scaled fit
+
+Sample | n | Scaled χ² (df) | Scaled CFI / TLI | Scaled RMSEA (90% CI) | SRMR
+
+pooled | 1832 | 549.500 (284) | 0.988 / 0.997 | 0.023 (0.020–0.025) | 0.025
+
+development | 1101 | 430.832 (284) | 0.989 / 0.997 | 0.022 (0.017–0.026) | 0.030
+
+validation | 731 | 402.136 (284) | 0.981 / 0.996 | 0.024 (0.018–0.029) | 0.033
+
+country 1 | 879 | 411.731 (277) | 0.981 / 0.996 | 0.024 (0.019–0.028) | 0.031
+
+country 2 | 953 | 419.628 (277) | 0.988 / 0.997 | 0.023 (0.019–0.028) | 0.035
+
+The Guyana within-country H1 fit has a parameter-covariance positive-definiteness warning with minimum eigenvalue −8.043889 × 10⁻¹⁷. Although it converges and passes the variance admissibility check, its coefficients are treated only as descriptive direction diagnostics. No comparative latent-country inference follows from these fits.
+
+Primary tests and coefficient interpretation
+
+The primary inferential family consists of 26 coefficients: 18 H1 paths to PPE or Handling, two symptom-regression coefficients, one heat-occurrence coefficient and five distress-regression coefficients. Holm adjustment uses native unstandardized WLSMV z-test p values for the behavioral model and HC3 regression p values for the health models. The same behavioral Holm values accompany β for presentation; p values from the delta-method standardized coefficients are not substituted in the adjustment. Twelve coefficients meet the designated Holm threshold of 0.05, comprising eight behavioral and four health coefficients.
+
+Fully standardized SEM β values and nominal 95% delta-method intervals are produced by standardizedSolution(type = std.all). Native b estimates, standard errors, nominal intervals and units are retained in the complete numerical release. An observed-predictor b is expressed in outcome mean-score units per one predictor-score unit; a latent-factor b is expressed per underlying marker-item response-liability unit. These quantities do not have interchangeable units and do not rank intervention effects. Intervals are nominal, not simultaneous; multiplicity adjustment does not account for model-selection uncertainty, diagnostics, sensitivity testing or unknown community clustering.
+
+Separate health regressions
+
+The symptom equation uses PPE and Handling means; the distress equation uses PPE, Handling, observed Coping and Confidence means, and Symptoms. Both are ordinary least squares with categorical country and A1–A11 adjustment and HC3 covariance. Nominal 95% intervals and p values use residual-degree-of-freedom t distributions. Coping and confidence in the health regressions are questionnaire means rather than H1 factor scores, and uncertainty is not propagated from a latent SEM. The regressions are separate association models, not sequential causal stages.
+
+The pooled heat-occurrence equation uses binary logistic regression of I(E10 > 0) on HeatProtection and the same categorical adjustment set, with HC3 covariance and normal-reference intervals on the log-odds scale. It includes all farmers with complete information (n = 1,966), of whom 750 report occurrence. The design is full rank, the model converges without warnings or constant-outcome nuisance cells, and fitted probabilities range from 0.027 to 0.898. The OR is 0.648 per one-point heat-protection increase (nominal 95% HC3 CI 0.555–0.757; Holm p < 0.001).
+
+Chemical handling is inversely associated with the symptom index (b = −0.094, nominal 95% HC3 CI −0.129 to −0.060; Holm p < 0.001). The PPE coefficient is −0.030 (CI −0.054 to −0.006; Holm p = 0.197). Distress is positively associated with Symptoms (b = 0.484, CI 0.387–0.581; Holm p < 0.001) and inversely with PPE (b = −0.091, CI −0.139 to −0.043; Holm p = 0.003). Handling, coping and confidence in the distress equation do not meet the family-adjusted threshold. These associations concern reported symptoms and study-specific scores; they do not establish exposure dose, diagnosed illness or causal protection.
+
+Linear health predictions may fall outside score bounds: primary Symptoms fitted values range from −0.109 to 0.932 on the 0–2 score, and Distress from −0.159 to 1.833 on the 0–3 score. These models summarize mean associations and are not calibrated individual clinical predictions. Primary R² values are 0.175 for Symptoms and 0.196 for Distress. Model diagnostics and all control estimates are available in S3 File.
+
+Matched individual barrier sensitivity
+
+The individual-barrier model changes only the Barriers mean to C5 (cost), C6 (hot-weather discomfort), C7 (time burden) and C8 (supply access). It preserves Training B1–B3, Norms C17/C19, the psychological factors, all other predictors, controls, estimation and the same 1,832 eligible records. C18 is excluded. The four barrier items enter as numerical ordinal predictors, imposing a linear coded-response assumption; they are not modeled as interchangeable reflective indicators. This model estimates 24 focal practice paths and 249 total parameters. Its pooled scaled CFI is 0.987, TLI 0.997, RMSEA 0.022 (90% CI 0.019–0.025) and SRMR 0.025; corrected robust indices remain unavailable. Development and validation fits converge and pass admissibility without warnings.
+
+Fifteen of 16 directly matched non-barrier paths retain their sign; the maximum absolute β difference is 0.016. Handling–Benefits changes from a near-zero negative estimate to a near-zero positive estimate. Individual barrier paths have different predictor units from the mean-barrier path and cannot be treated as numerical substitutes for it. The nominal sensitivity results distinguish constraints: discomfort relates inversely to PPE, while cost and access relate inversely to handling. The positive access–PPE estimate and intervals covering zero for other items preclude a uniform barrier-effect claim. These eight item coefficients are outside the primary Holm family.
+
+Table S2.5. Individual barrier paths with nominal standardized intervals
+
+Outcome | Barrier item | β | Nominal 95% CI
+
+PPE | C5 Cost | 0.000 | -0.045 to 0.046
+
+PPE | C6 Discomfort | -0.159 | -0.203 to -0.116
+
+PPE | C7 Time | -0.045 | -0.091 to 0.002
+
+PPE | C8 Access | 0.049 | 0.007 to 0.091
+
+Handling | C5 Cost | -0.114 | -0.160 to -0.068
+
+Handling | C6 Discomfort | 0.030 | -0.016 to 0.075
+
+Handling | C7 Time | -0.021 | -0.069 to 0.027
+
+Handling | C8 Access | -0.079 | -0.125 to -0.032
+
+Internal estimator and country checks
+
+Development and validation H1 estimates retain the pooled point-estimate direction for 16/18 and 15/18 focal paths, respectively; the largest absolute β differences are 0.042 and 0.054. Trinidad and Tobago and Guyana fits retain 13/18 and 15/18 directions, respectively. These are descriptive counts of coefficient signs, not replication tests, country contrasts or evidence of invariant latent measurement.
+
+A robust maximum-likelihood sensitivity fits the H1 structure with its ten psychological indicators approximated as continuous, preserving the categorical control indicators and cohort. It uses fixed exogenous variables and meanstructure = FALSE. All pooled and partition fits converge, pass admissibility and have no warnings. Pooled corrected robust CFI is 0.961, TLI 0.935 and RMSEA 0.030 (90% CI 0.027–0.033); SRMR is 0.016. Development and validation corrected robust CFI are 0.960 and 0.959, RMSEA 0.031 and 0.030, and SRMR 0.018 and 0.019. Fifteen of 18 pooled point-estimate directions agree with WLSMV; maximum absolute β difference is 0.054. This is an estimator and numerical-category approximation check, not replacement evidence for the ordinal measurement assumptions.
+
+Health sensitivity specifications and results
+
+Joint-complete sensitivity requires all 14 observed summaries, E10 and country/A1–A11, retaining A10 = 1 or 2 for symptoms and distress. The unique-profile sensitivity retains the first representative of each full numerical response profile; matching answers are assessed for influence and are not proof of duplicated participants. The all-farmer sensitivity removes the current-chemical-user restriction for symptoms and distress; the primary heat model already includes all farmers. Separate-country linear fits are descriptive checks. Sensitivity intervals and tests are nominal and outside the primary Holm family.
+
+Table S2.6. Health sensitivity case counts
+
+Specification | Symptoms | Heat occurrence | Distress
+
+Primary modelwise complete | 1859 | 1966 | 1851
+
+Joint complete | 1817 | 1902 | 1817
+
+One representative per profile | 1838 | 1945 | 1830
+
+All farmers | 1948 | Primary includes all | 1940
+
+Trinidad and Tobago descriptive | 900 | Not used for inference | 895
+
+Guyana descriptive | 959 | Not used for inference | 956
+
+Handling–Symptoms estimates remain inverse in the joint-complete (b = −0.093), unique-profile (−0.093) and all-farmer (−0.077) specifications. Symptoms–Distress is 0.483, 0.486 and 0.495, respectively. The heat-occurrence OR is 0.650 in joint-complete records and 0.642 in unique-profile records. Country checks are less uniform for other associations: Handling–Distress is 0.036 in Trinidad and Tobago (nominal CI −0.092 to 0.164) and −0.107 in Guyana (−0.190 to −0.023); coping and confidence also differ in sign. These are not formal differences between countries.
+
+A binary any-pesticide-symptom model changes the endpoint to I(Symptoms > 0), retaining n = 1,859 and the primary adjustment set. PPE and Handling ORs are 0.796 (nominal 95% HC3 CI 0.683–0.929) and 0.648 (0.517–0.811). This sensitivity addresses occurrence rather than mean response-category recurrence. Secondary training regressions examine support and oversight (n = 1,961) and are also excluded from the 26-test family.
+
+The ordinal heat sensitivity retains the three E10 categories in a proportional-odds regression (n = 1,966). Its common OR is 0.594 (nominal 95% score-based HC0 sandwich CI 0.506–0.696). Proportional-odds constraints are unsupported: the heat-protection slopes for E10 > 0 and E10 > 1 are −0.433 and −0.797. Their difference is −0.364 (HC3 SE 0.158; Wald χ² = 5.310, df = 1, p = 0.021). Joint equality of all 30 nonintercept slopes is rejected (Wald χ² = 62.758, df = 30, p < 0.001). The diagnostic uses the covariance of correlated estimating scores for the same cases, including cross-threshold covariance; it is not a likelihood-ratio comparison of proportional-odds and multinomial models. The ordinal OR is therefore a qualified recurrence sensitivity, not a common clinical severity effect. The primary binary endpoint estimates occurrence without imposing equality across recurrence thresholds.
+
+No ordinary maximum-likelihood country-specific heat inference is reported because sparse nuisance categories can create boundary estimates. For example, Guyana gender category 3 contains only two complete cases, both in the highest E10 category. The pooled heat model does not show this diagnostic problem. The complete category counts and slope-equality calculations are supplied in S3 File.
+
+Data checks and reporting limits
+
+Numerical coding was reconciled with the labelled workbook and questionnaire. Two valid E15 responses omitted in numerical coding were restored to category 3. Four A11 answers outside its binary options were set to missing because their intended values cannot be resolved from the available source. Source location whitespace was normalized for reconciliation. The public release omits source identifiers, detailed geographic labels, interviews, signatures and consent scans. No participant identity is contained in the analytical record identifier.
+
+Ten identical-profile groups contain 31 records, producing 21 excess profiles for influence assessment. All distinct records are retained in primary analyses. Pain work-limitation percentages require a positive parent pain response and a valid conditional answer; inconsistent skips do not enter the denominator. Every descriptive proportion uses its valid item denominator and every model reports its own complete-case denominator.
+
+Self-report, differing recall periods, nonprobability recruitment, complete-case selection, possible common reporting effects and unrecorded community clustering limit interpretation. Coded numerical means and individual barrier slopes impose category-spacing and linearity assumptions. HC3 covariance does not repair those assumptions or recover an unavailable sampling design. The results do not identify causal mediation, national prevalence, equivalent latent country pathways or intervention effectiveness.
+
+STROBE reporting locations
+
+This cross-sectional reporting map identifies manuscript sections rather than fixed page numbers. The author should update journal-system page locations after final pagination. The study design section states that no formal sample-size or power calculation is documented. Author records may augment this reporting; a numerical target of 2,000 is not itself a documented precision or power rationale.
+
+Item | Reporting topic | Manuscript location
+
+1 | Study design in title and abstract | Abstract; Materials and methods
+
+2–3 | Background and objectives | Introduction
+
+4–6 | Design, setting and participants | Study design recruitment and ethics
+
+7–8 | Variables and measurement | Survey measures; Table 1; S1 File
+
+9 | Potential bias | Data preparation; Measurement and study limitations
+
+10 | Study-size rationale | Study design recruitment and ethics; author records may augment the stated absence of a formal calculation
+
+11 | Handling quantitative variables | Survey measures; Psychological measurement and hybrid SEM; S2
+
+12 | Methods, missingness and sensitivities | Analysis sections; S2; S3 File
+
+13 | Participants and analysis counts | Data preparation; Results; modelwise counts in S2/S3
+
+14 | Descriptive data and missingness | Tables 2–3 and valid-response denominators
+
+15–16 | Outcome data and main results | Measurement and SEM fit; practice and health results; Tables 4–6
+
+17 | Other analyses | Sensitivity analyses; Fig 3; S2/S3
+
+18–21 | Findings, limitations, interpretation and generalizability | Discussion; Conclusions
+
+22 | Funding | Submission funding statement
+
+Analyses use R 4.2.3, lavaan 0.7-3, semTools 0.5.10 and sandwich 3.1-3. S3 File provides source and cleaned numerical data, dictionaries, corrections, fixed partition, model definitions, portable analysis scripts, all coefficients, fit forms, warnings and session information. S4 File provides figure inputs, plotting code and captions for Figs 1–3.

@@ -1,0 +1,5 @@
+lavaan->lav_model_vcov():  
+   The variance-covariance matrix of the estimated parameters (vcov) does not 
+   appear to be positive definite! The smallest eigenvalue (= -8.043889e-17) 
+   is smaller than zero. This may be a symptom that the model is not 
+   identified.

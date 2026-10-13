@@ -1,0 +1,2 @@
+lavaan->lav_data_full():  
+   some cases are empty and will be ignored: 1066 1943.

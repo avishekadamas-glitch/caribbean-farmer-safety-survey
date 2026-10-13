@@ -1,0 +1,5 @@
+The designated primary family has 18 behavioral paths and 8 health-regression coefficients.
+Behavioral p values come from native unstandardized WLSMV tests. The same Holm p values are attached to the corresponding standardized beta rows; no standardized-zero-test substitution is made.
+Health tests are HC3 tests of unstandardized score coefficients or log odds. Nominal intervals are not multiplicity-adjusted confidence sets.
+The models and their comparison are exploratory. This family correction does not account for measurement uncertainty, model specification uncertainty, or unrecorded sampling clusters.
+Secondary training, assumption diagnostics, candidate comparisons and sensitivity coefficients are excluded from the primary family. Very small native p values may round numerically to zero; manuscript display uses a threshold such as p<0.001.

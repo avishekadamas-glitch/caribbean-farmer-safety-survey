@@ -1,16 +1,16 @@
 cff-version: 1.2.0
-message: Please cite this dataset and analysis package when using these materials.
-title: Caribbean farmer safety survey data and reproducible analyses
+message: "Please cite this deidentified survey dataset and reproducibility package."
+title: "Caribbean farmer safety survey data and reproducible analysis"
 type: dataset
 authors:
   - family-names: Parasram
     given-names: Barry
-    orcid: https://orcid.org/0009-0004-6547-7405
+    orcid: "https://orcid.org/0009-0004-6547-7405"
   - family-names: Choudhury
     given-names: Avishek
-    orcid: https://orcid.org/0000-0002-5342-0709
+    orcid: "https://orcid.org/0000-0002-5342-0709"
+version: 2.0.0
 date-released: 2026-10-13
-version: 1.0.0
-doi: 10.5281/zenodo.23347518
-url: https://doi.org/10.5281/zenodo.23347518
+doi: 10.5281/zenodo.23349784
+url: "https://github.com/avishekadamas-glitch/caribbean-farmer-safety-survey"
 license: CC-BY-4.0

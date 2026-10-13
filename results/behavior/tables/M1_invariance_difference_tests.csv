@@ -1,0 +1,4 @@
+"","Df","AIC","BIC","Chisq","Chisq diff","Df diff","Pr(>Chisq)"
+"invariant$configural",64,NA,NA,178.241338523445,NA,NA,NA
+"invariant$thresholds",84,NA,NA,233.172010244594,83.8881257034,20,8.50644902652467e-10
+"invariant$thresholds_loadings",91,NA,NA,276.638966618684,46.2805831058,7,7.7089111257245e-08
