@@ -1,0 +1,22 @@
+
+Oversight =~ B6+B7
+Training =~ B1+B2+B3
+Norms =~ C17+C19
+Benefits =~ C9+C10
+Barriers =~ C5+C6+C7+C8
+Practices =~ D1+D2+D3+D4+D5+D6+D7+D8
+Coping =~ C11+C12+C13
+Pesticide =~ E1+E2+E3+E4
+Heat =~ E10+E11+E12
+Distress =~ E13+E14+E15
+ 
+Training ~ Oversight
+Benefits ~ Oversight+Training+Barriers
+Practices ~ Norms+Benefits
+Coping ~ Norms+Benefits
+Pesticide ~ Practices+Coping
+Heat ~ Practices+Coping
+Distress ~ Practices+Coping+Pesticide
+Oversight ~~ Norms+Barriers
+Norms ~~ Barriers
+
