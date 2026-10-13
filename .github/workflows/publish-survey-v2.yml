@@ -1,0 +1,96 @@
+name: Publish verified survey release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: survey-release-publication
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'avishekadamas-glitch/caribbean-farmer-safety-survey' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ARCHIVE_URL: 'https://zenodo.org/records/23349784/files/reproducible_data_code_v2.zip?download=1'
+      ARCHIVE_SHA256: '54f245d2c3a46f8f61847033b95ae62c81d84957915441c948e29b22b8acf6c2'
+      ARCHIVE_FILE_COUNT: '196'
+    steps:
+      - name: Check out this repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Download immutable public study archive
+        shell: bash
+        run: |
+          curl --fail --location --silent --show-error --retry 5 --retry-all-errors --max-time 120 --output "$RUNNER_TEMP/study-release.zip" "$ARCHIVE_URL"
+      - name: Verify archive and install study files
+        shell: bash
+        run: |
+          python3 - "$RUNNER_TEMP/study-release.zip" "$ARCHIVE_SHA256" "$ARCHIVE_FILE_COUNT" ".github/workflows/publish-survey-v2.yml" <<'PY'
+          # One-time repository release installer. No study analyses are executed here.
+          import hashlib, json, os, stat, subprocess, sys, zipfile
+          from pathlib import Path, PurePosixPath
+          archive, expected_sha, expected_count, workflow = sys.argv[1:]
+          expected_count = int(expected_count)
+          root = Path.cwd()
+          actual_sha = hashlib.sha256(Path(archive).read_bytes()).hexdigest()
+          if actual_sha != expected_sha:
+              raise SystemExit('Archive SHA256 mismatch')
+          with zipfile.ZipFile(archive) as z:
+              entries = [i for i in z.infolist() if not i.is_dir()]
+              names = [i.filename for i in entries]
+              if len(names) != expected_count or len(names) != len(set(names)):
+                  raise SystemExit('Unexpected archive file count or duplicate paths')
+              for entry in entries:
+                  p = PurePosixPath(entry.filename)
+                  if p.is_absolute() or '..' in p.parts or not p.parts or any(part in ('.git', '.github') for part in p.parts):
+                      raise SystemExit('Archive path outside study payload')
+                  if stat.S_ISLNK(entry.external_attr >> 16):
+                      raise SystemExit('Archive symlink is not allowed')
+                  if entry.file_size > 25 * 1024 * 1024:
+                      raise SystemExit('Unexpected individual file size')
+              manifest = json.loads(z.read('SHA256SUMS.json'))
+              if set(manifest) != set(names) - {'SHA256SUMS.json'}:
+                  raise SystemExit('Archive manifest path mismatch')
+              payload = {entry.filename:z.read(entry) for entry in entries}
+              for name, expected in manifest.items():
+                  if hashlib.sha256(payload[name]).hexdigest() != expected:
+                      raise SystemExit('Archive internal checksum mismatch: ' + name)
+          # Remove only tracked study payload; preserve the temporary publishing workflow.
+          tracked = subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')
+          for name in tracked:
+              if not name or name == workflow:
+                  continue
+              p = root / name
+              if p.is_file() or p.is_symlink():
+                  p.unlink()
+          for name, data in payload.items():
+              p = root / name
+              p.parent.mkdir(parents=True, exist_ok=True)
+              p.write_bytes(data)
+          actual_files = {p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file() and '.git' not in p.relative_to(root).parts and p.relative_to(root).as_posix() != workflow}
+          if actual_files != set(names):
+              raise SystemExit('Installed file tree mismatch')
+          for name, data in payload.items():
+              if (root/name).read_bytes() != data:
+                  raise SystemExit('Installed bytes mismatch: ' + name)
+          print('Verified and installed', expected_count, 'study files from archive', actual_sha)
+          PY
+      - name: Commit the verified study release
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+          if git diff --cached --quiet; then
+            echo "Study release already matches the verified archive."
+            exit 0
+          fi
+          git commit -m "Publish survey data and reproducible analysis version 2.0.0"
+          git push origin HEAD:main
