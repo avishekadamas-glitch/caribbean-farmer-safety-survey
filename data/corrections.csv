@@ -1,0 +1,7 @@
+record_id,item,original,cleaned,reason
+175,A11,2,missing,Response outside binary questionnaire options; labelled source says Yes regularly; requires source adjudication
+216,E15,missing,3,Valid highest distress category in labelled source; trailing whitespace caused numeric omission
+641,A11,2,missing,Response outside binary questionnaire options; labelled source says Yes regularly; requires source adjudication
+1278,A11,2,missing,Response outside binary questionnaire options; labelled source says Yes regularly; requires source adjudication
+1370,E15,missing,3,Valid highest distress category in labelled source; trailing whitespace caused numeric omission
+1421,A11,2,missing,Response outside binary questionnaire options; labelled source says Yes regularly; requires source adjudication
