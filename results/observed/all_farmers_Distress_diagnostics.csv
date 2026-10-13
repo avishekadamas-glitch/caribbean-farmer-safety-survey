@@ -1,0 +1,2 @@
+"analysis","outcome","n","rank","df","max_leverage","max_cook","converged","rank_deficient","r2","pred_min","pred_max"
+"all_farmers","Distress",1940,35,1905,0.168275280827977,0.0115784822054705,TRUE,FALSE,0.186536390972998,-0.14227609058707,1.81382574851852

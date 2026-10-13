@@ -1,0 +1,2 @@
+"analysis","outcome","n","rank","df","max_leverage","max_cook","converged","rank_deficient","r2","pred_min","pred_max"
+"unique_profiles","Symptoms",1838,31,1807,0.168608564441031,0.103764413832061,TRUE,FALSE,0.175576822307579,-0.108571479069046,0.938197888912588

@@ -1,0 +1,15 @@
+"score","items","min","max","missing"
+"Training","B1,B2,B3",0,2,2
+"Support","B4,B5",1,5,9
+"Oversight","B6,B7",1,5,13
+"Risk","C1,C2,C3,C4",1,5,16
+"Barriers","C5,C6,C7,C8",1,5,11
+"Benefits","C9,C10",1,5,10
+"Coping","C11,C12,C13",1,5,9
+"Confidence","C14,C15,C16",1,5,8
+"Norms","C17,C19",1,5,7
+"PPE","D1,D2,D3,D4",1,5,13
+"Handling","D5,D6,D7,D8",1,5,14
+"HeatProtection","D10,D12,D13",1,5,7
+"Symptoms","E1,E2,E3,E4",0,2,17
+"Distress","E13,E14,E15",0,3,5

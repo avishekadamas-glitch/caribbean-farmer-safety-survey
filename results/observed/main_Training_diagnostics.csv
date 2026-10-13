@@ -1,0 +1,2 @@
+"analysis","outcome","n","rank","df","max_leverage","max_cook","converged","rank_deficient","r2","pred_min","pred_max"
+"main","Training",1961,32,1929,0.165316419199063,0.0769426710901442,TRUE,FALSE,0.263095729835322,-0.332079833291172,2.19071857282648

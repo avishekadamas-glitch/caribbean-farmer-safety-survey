@@ -1,0 +1,2 @@
+"analysis","outcome","n","rank","df","max_leverage","max_cook","converged","rank_deficient","r2","pred_min","pred_max"
+"country_1","Symptoms",900,30,870,0.241817488766676,0.0462753531772653,TRUE,FALSE,0.0935297738408792,-0.0640163013720857,0.517653583394455
